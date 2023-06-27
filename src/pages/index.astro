@@ -1,0 +1,160 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+---
+
+<Layout title="Arde Outra Vez">
+	<div class="em-breve">
+		<div>
+			<div class="fire">
+				<img src="https://images.emojiterra.com/google/android-12l/512px/1f525.png" alt="">
+			</div>
+			<h2>FALTAM</h2>
+			<div class="countdown">
+				<div class="container-day">
+					<h3 class="day">Time</h3>
+					<h3>Dias</h3>
+				</div>
+				<div class="container-hour">
+					<h3 class="hour">Time</h3>
+					<h3>Horas</h3>
+				</div>
+				<div class="container-minute">
+					<h3 class="minute">Time</h3>
+					<h3>Minutos</h3>
+				</div>
+				<div class="container-second">
+					<h3 class="second">Time</h3>
+					<h3>Segundos</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="charadas">
+			<h2>As respostas para todas as suas dúvidas na BÍBLIA você encntrará</h2>
+			<div class="cards">
+				<div class="charada-1 card-charada">
+					<h3>🔥 Charada 1</h3>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus repellat laborum nihil autem nemo ad officiis iste. Tempora nesciunt saepe odio delectus fugit obcaecati commodi repudiandae voluptatem, porro dolorem nobis.</p>
+				</div>
+				<div class="charada-2 card-charada">
+					<h3>🙊 Charada 2</h3>
+					<p>Em breve</p>
+				</div>
+				<div class="charada-3 card-charada">
+					<h3>🙊 Charada 3</h3>
+					<p>Em breve</p>
+				</div>
+				<div class="charada-4 card-charada">
+					<h3>🙊 Charada 4</h3>
+					<p>Em breve</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	
+	.em-breve {
+		max-width: 800px;
+		margin: 2rem auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.fire {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	img {
+		max-width: 100px;
+	}
+
+	.em-breve h2 {
+		font-size: 100px;
+		text-align: center;
+	}
+
+	.countdown {
+		display: flex;
+		justify-content: space-between;
+		text-align: center;
+		width: 700px;
+	}
+
+	.container-day, 
+	.container-hour, 
+	.container-minute,
+	.container-second {
+		background-color: #3f3631;
+		width: 120px;
+		border-radius: 30px;
+		border: 1px solid #fb725d;
+		padding: 0 8px;
+	} 
+
+	.day,
+	.hour,
+	.minute,
+	.second {
+		font-size: 3rem;
+	}
+
+	.charadas {
+		margin-top: 4rem;
+	}
+
+	.cards {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.charadas h2 {
+		font-size: 30px;
+		font-weight: 500;
+		text-align: left;
+	}
+	.card-charada {
+		background-color: #3f3631;
+		padding: .8rem 2rem;
+		border: 2px solid #fb725d;
+		border-radius: 30px;
+	}
+	.charada-2, .charada-3, .charada-4 {
+		background-color: #4f4a48;
+		color: #7c7673;
+	}
+</style>
+
+
+<script>
+	const countdown = () => {
+		const countDate = new Date('July 01, 2023 19:00:00').getTime();
+		const now = new Date().getTime();
+		const gap =  countDate - now;
+
+		const second = 1000;
+		const minute = second * 60;
+		const hour = minute * 60;
+		const day = hour * 24;
+
+		const textDay = Math.floor(gap / day);
+		const textHour = Math.floor((gap % day) / hour);
+		const textMinute = Math.floor((gap % hour) / minute);
+		const textSecond = Math.floor((gap % minute) / second);
+
+		document.querySelector(".day").innerText = textDay;
+		document.querySelector(".hour").innerText = textHour;
+		document.querySelector(".minute").innerText = textMinute;
+		document.querySelector(".second").innerText = textSecond;
+	}
+
+	setInterval(countdown, 1000)
+
+</script>
