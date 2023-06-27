@@ -35,7 +35,10 @@ import Layout from '../layouts/Layout.astro';
 			<div class="cards">
 				<div class="charada-1 card-charada">
 					<h3>🔥 Charada 1</h3>
-					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Possimus repellat laborum nihil autem nemo ad officiis iste. Tempora nesciunt saepe odio delectus fugit obcaecati commodi repudiandae voluptatem, porro dolorem nobis.</p>
+					<p>No Monte Carmelo, eu me posicionei,
+						Desafiando os profetas de uma terra estrangeira,
+						O fogo consumiu meu sacrifício, sem ninguém para culpar,
+						Provando o poder do Deus que eu proclamo. Qual é o meu nome?</p>
 				</div>
 				<div class="charada-2 card-charada">
 					<h3>🙊 Charada 2</h3>
@@ -57,7 +60,7 @@ import Layout from '../layouts/Layout.astro';
 <style>
 	
 	.em-breve {
-		max-width: 800px;
+		max-width: 48rem;
 		margin: 2rem auto;
 		display: flex;
 		flex-direction: column;
@@ -72,11 +75,11 @@ import Layout from '../layouts/Layout.astro';
 		align-items: center;
 	}
 	img {
-		max-width: 100px;
+		max-width: 7rem;
 	}
 
 	.em-breve h2 {
-		font-size: 100px;
+		font-size: 6.4rem;
 		text-align: center;
 	}
 
@@ -84,7 +87,8 @@ import Layout from '../layouts/Layout.astro';
 		display: flex;
 		justify-content: space-between;
 		text-align: center;
-		width: 700px;
+		max-width: 60rem;
+		gap: 2rem;
 	}
 
 	.container-day, 
@@ -129,6 +133,72 @@ import Layout from '../layouts/Layout.astro';
 	.charada-2, .charada-3, .charada-4 {
 		background-color: #4f4a48;
 		color: #7c7673;
+	}
+
+	p {
+		font-size: 1.2rem;
+	}
+
+	@media (max-width: 40em) {
+		.em-breve {
+		max-width: 48rem;
+		margin: 2rem auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		}
+
+		img {
+			max-width: 4rem;
+		}
+
+		.em-breve h2 {
+			font-size: 2.4rem;
+		}
+
+		.countdown {
+			max-width: 60rem;
+			gap: .6rem;
+		}
+
+		.container-day, 
+		.container-hour, 
+		.container-minute,
+		.container-second {
+			width: 4rem;
+			border-radius: 1.4rem;
+			padding: 0 .6rem;
+		}
+		.countdown h3 {
+			font-size: .7rem;
+		}
+		h3.day,
+		h3.hour,
+		h3.minute,
+		h3.second {
+			font-size: 1.8rem;
+		} 
+
+		.charadas {
+			padding: 0 1rem;
+		}
+
+		.charadas h2 {
+			font-size: 1.8rem;
+		}
+		
+	}
+
+	@media (max-width: 30em) {
+		.container-day, 
+		.container-hour, 
+		.container-minute,
+		.container-second {
+			width: 3.3rem;
+			border-radius: 1.4rem;
+			padding: 0 .7rem;
+		}
 	}
 </style>
 
